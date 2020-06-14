@@ -1,13 +1,16 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
+import React, { useContext } from "react";
+import { MovieContext } from '../Context/MovieContext';
 
-const Movies = ({movieResults}) => {
+const Movies = () => {
+    const { popularMovies } = useContext(MovieContext)
     return (
         <section className="movies" css={styles}>
-            { 
-                movieResults.results.map(result => {
+            {
+                popularMovies.map(result => {
                     let img = `https://image.tmdb.org/t/p/w400/${result.poster_path}`;
-                    return <img src={img}/>
+                    return <img src={img} />
                 })
             }
         </section>

@@ -1,14 +1,16 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-
 import RightSideNav from './RightSideNav';
 import Movies from '../Movies/Movies';
+import React, { useContext } from "react";
+import { MovieContext } from '../Context/MovieContext';
 
-const RightSide = ({results}) => {
+const RightSide = () => {
+    const { popularMovies, handleMovieSearch, handleInputValue, inputValue, setInputValue } = useContext(MovieContext);
     return (
         <section className="rightSide" css={styles}>
             <RightSideNav />
-            <Movies movieResults={results}/>
+            <Movies />
         </section>
     )
 }

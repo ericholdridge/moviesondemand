@@ -1,8 +1,11 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core'
+import React, { useContext } from "react";
+import { MovieContext } from '../Context/MovieContext';
 
 const RightSideNav = () => {
-    return(
+    const { handleMovieSearch, inputValue, setInputValue } = useContext(MovieContext);
+    return (
         <div className="hello" css={styles}>
             <h3>TRENDING NOW</h3>
             <ul>
@@ -11,9 +14,9 @@ const RightSideNav = () => {
                 <li><a href="">Series</a></li>
                 <li><a href="">TV Shows</a></li>
             </ul>
-            <form action="">
+            <form action="" onSubmit={handleMovieSearch}>
                 <i className="fas fa-search"></i>
-                <input type="text" placeholder="Search"/>
+                <input type="text" placeholder="Search" onChange={e => setInputValue(e.target.value)} value={inputValue} />
             </form>
         </div>
     )
