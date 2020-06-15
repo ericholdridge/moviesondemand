@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.App{
+  display: flex;
+  overflow: hidden;
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+}

@@ -21,7 +21,7 @@ export const MovieState = ({ children }) => {
         e.preventDefault();
         // Fetch data from the api
         const API_KEY = '57f65183575e8374ca2935e492541b4e';
-        const searchAPI = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${inputValue}&page=1&include_adult=false`
+        const searchAPI = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${inputValue}&page=1&include_adult=true`
         Axios(searchAPI).then(({ data }) => {
             const results = data.results;
             setPopularMovies(results)

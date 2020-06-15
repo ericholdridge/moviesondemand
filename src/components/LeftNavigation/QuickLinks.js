@@ -1,15 +1,17 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
+import { NavLink } from "react-router-dom";
 
 const QuickLinks = () => {
     return (
         <div css={styles}>
             <h3>QUICK LINKS</h3>
             <ul>
-                <li><a href="/favoritemovies"><i className="fas fa-heart"></i>Favorite Movies</a></li>
-                <li><a href="/popular"><i className="fas fa-star"></i>Popular</a></li>
-                <li><a href="/watchlater"><i className="fas fa-folder"></i>Watch Later</a></li>
-                <li><a href="/podcasts"><i className="fas fa-podcast"></i>Podcasts</a></li>
+                <li><NavLink activeClassName="active" exact to="/"><i className="fas fa-heart"></i>Home</NavLink></li>
+                <li><NavLink activeClassName="active" to="/favoritemovies"><i className="fas fa-heart"></i>Favorite Movies</NavLink></li>
+                <li><NavLink activeClassName="active" to="/popular"><i className="fas fa-star"></i>Popular</NavLink></li>
+                <li><NavLink activeClassName="active" to="/watchlater"><i className="fas fa-folder"></i>Watch Later</NavLink></li>
+                <li><NavLink activeClassName="active" to="/podcasts"><i className="fas fa-podcast"></i>Podcasts</NavLink></li>
             </ul>
         </div>
     )
@@ -34,6 +36,9 @@ const styles = css`
                 text-decoration: none;
                 color: #6f7181;
                 padding: 20px 0;
+                &.active{
+                    color: red;
+                }
                 i {
                     margin: 0 30px 0 0;
                 }

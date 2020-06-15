@@ -6,7 +6,7 @@ import { MovieContext } from '../Context/MovieContext';
 const RightSideNav = () => {
     const { handleMovieSearch, inputValue, setInputValue } = useContext(MovieContext);
     return (
-        <div className="hello" css={styles}>
+        <nav css={styles}>
             <h3>TRENDING NOW</h3>
             <ul>
                 <li><a href="">All</a></li>
@@ -18,15 +18,15 @@ const RightSideNav = () => {
                 <i className="fas fa-search"></i>
                 <input type="text" placeholder="Search" onChange={e => setInputValue(e.target.value)} value={inputValue} />
             </form>
-        </div>
+        </nav>
     )
 }
 
 const styles = css`
     width: 100%;
-    max-width: 1300px;
-    height: 100%;
+    max-width: 92%;
     margin: 0 auto;
+    padding: 30px 0 10px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;

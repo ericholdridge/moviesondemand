@@ -1,15 +1,16 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
+import { NavLink } from "react-router-dom";
 
-const QuickLinks = () => {
+const ManageAccount = () => {
     return (
         <div css={styles}>
             <h3>MANAGE ACCOUNT</h3>
             <ul>
-                <li><a href="/profile"><i className="fas fa-user-circle"></i>Profile</a></li>
-                <li><a href="/payment"><i className="far fa-credit-card"></i>Payment</a></li>
-                <li><a href="/support"><i className="fas fa-info-circle"></i>Support</a></li>
-                <li><a href="/logout"><i className="fas fa-sign-out-alt"></i>Logout</a></li>
+                <li><NavLink activeClassName="active" to="/profile"><i className="fas fa-user-circle"></i>Profile</NavLink></li>
+                <li><NavLink activeClassName="active" to="/payment"><i className="far fa-credit-card"></i>Payment</NavLink></li>
+                <li><NavLink activeClassName="active" to="/support"><i className="fas fa-info-circle"></i>Support</NavLink></li>
+                <li><NavLink activeClassName="active" to="/logout"><i className="fas fa-sign-out-alt"></i>Logout</NavLink></li>
             </ul>
         </div>
     )
@@ -34,6 +35,9 @@ const styles = css`
                 text-decoration: none;
                 color: #6f7181;
                 padding: 20px 0;
+                &.active{
+                    color: red;
+                }
                 i {
                     margin: 0 30px 0 0;
                 }
@@ -43,4 +47,4 @@ const styles = css`
 `;
 
 
-export default QuickLinks;
+export default ManageAccount;

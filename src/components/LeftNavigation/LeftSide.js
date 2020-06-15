@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import QuickLinks from './QuickLinks';
-import ManageAccount from './ManageAccout';
+import ManageAccount from './ManageAccount';
 import Account from './Account';
 
 
@@ -17,7 +17,9 @@ const LeftSide = () => {
 
 const styles = css`
     width: 100%;
+    min-width: 300px;
     max-width: 300px;
+    min-height: 100vh;
     background: #f4f0f9;
     display: flex;
     flex-direction: column;

@@ -1,29 +1,23 @@
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core'
-import LeftSide from './components/LeftNavigation/LeftSide';
-import RightSide from './components/RightNavigation/RightSide';
-import Container from './components/Global/Container';
-
+import React from 'react';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { MovieState } from './components/Context/MovieContext';
+import Hero from './components/Hero/Hero';
+import LeftSide from "./components/LeftNavigation/LeftSide";
+import Popular from "./components/Popular/Popular";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <MovieState>
-      <div className="App" css={styles}>
-        <Container>
+    <Router>
+      <MovieState>
+        <div className="App">
           <LeftSide />
-          <RightSide />
-        </Container>
-      </div>
-    </MovieState>
+          <Route exact path="/" component={Hero} />
+          <Route path="/popular" component={Popular} />
+        </div>
+      </MovieState>
+    </Router>
   );
 }
-
-const styles = css`
-  padding: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
 
 export default App;
