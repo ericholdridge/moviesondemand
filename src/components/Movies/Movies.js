@@ -9,11 +9,11 @@ const Movies = () => {
     return (
         <div className="movies" css={styles}>
             <Container>
-                {/* {
+                {
                     popularMovies.map(result => {
                         return <img src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`} />
                     })
-                } */}
+                }
             </Container>
 
         </div>
