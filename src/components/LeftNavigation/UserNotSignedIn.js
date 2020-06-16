@@ -2,13 +2,13 @@
 import { css, jsx } from '@emotion/core';
 import { NavLink } from "react-router-dom";
 
-const QuickLinks = () => {
+const UserNotSignedIn = () => {
     return (
         <div css={styles}>
-            <h3>QUICK LINKS</h3>
+            <h3>REGISTER/SIGN IN</h3>
             <ul>
-                <li><NavLink activeClassName="active" exact to="/"><i className="fas fa-heart"></i>Popular</NavLink></li>
-                <li><NavLink activeClassName="active" to="/trending"><i className="fas fa-star"></i>Trending</NavLink></li>
+                <li><NavLink activeClassName="active" exact to="/register"><i class="fas fa-user-plus"></i>Register</NavLink></li>
+                <li><NavLink activeClassName="active" to="/login"><i class="fas fa-sign-in-alt"></i>Login</NavLink></li>
             </ul>
         </div>
     )
@@ -18,6 +18,7 @@ const styles = css`
     width: 100%;
     max-width: 230px;
     text-align: left;
+    padding: 30px 0 0 0;
     h3 {
         color: #6f7181;
         letter-spacing: 2px;
@@ -46,4 +47,4 @@ const styles = css`
 `;
 
 
-export default QuickLinks;
+export default UserNotSignedIn;

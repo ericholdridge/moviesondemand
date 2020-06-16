@@ -5,7 +5,7 @@ const Container = ({ children }) => <div className="container" css={styles}>{chi
 
 const styles = css`
     width: 100%;
-    max-width: 1800px;
+    max-width: 94%;
     margin: 0 auto;
 `
 

@@ -6,7 +6,7 @@ const Account = () => {
     return (
         <div css={styles}>
             <div className="profileImage">
-                <img src={PersonImage} alt="Profile Picture"/>
+                <img src={PersonImage} alt="Profile Picture" />
             </div>
             <span>Leslie Robertson</span>
         </div>

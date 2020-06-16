@@ -2,23 +2,24 @@
 import { css, jsx } from '@emotion/core';
 import React, { useContext } from "react";
 import { MovieContext } from '../Context/MovieContext';
+import HeroNav from "../Hero/HeroNav";
 import Container from "../Global/Container";
 
-const Movies = () => {
-    const { popularMovies } = useContext(MovieContext)
+const Trending = () => {
+    const { trendingMovies } = useContext(MovieContext)
     return (
-        <div className="movies" css={styles}>
+        <section css={styles}>
+            <HeroNav />
             <Container>
                 {
-                    popularMovies.map(result => {
+                    trendingMovies.map(result => {
                         return <img src={`https://image.tmdb.org/t/p/w400/${result.poster_path}`} />
                     })
                 }
             </Container>
-
-        </div>
-    )
-}
+        </section>
+    );
+};
 
 const styles = css`
     width: 100%;
@@ -35,13 +36,12 @@ const styles = css`
             width: 0;
         }
         img {
-        display: block;
-        width: 300px;
-        margin: 22px 0;
-        cursor: pointer;
+            display: block;
+            width: 300px;
+            margin: 22px 0;
+            cursor: pointer;
+        }
     }
-    }
-
     @media(max-width: 710px){
         .container{
             img{
@@ -93,6 +93,6 @@ const styles = css`
             }
         }
     }
-`;
+`
 
-export default Movies;
+export default Trending;

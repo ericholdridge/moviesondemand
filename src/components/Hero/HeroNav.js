@@ -4,20 +4,15 @@ import React, { useContext } from "react";
 import { MovieContext } from '../Context/MovieContext';
 
 const RightSideNav = () => {
-    const { handleMovieSearch, inputValue, setInputValue } = useContext(MovieContext);
+    const { handleMovieSearch, inputValue, setInputValue, hiddenMenu, setHiddenMenu } = useContext(MovieContext);
     return (
         <nav css={styles}>
-            <h3>TRENDING NOW</h3>
-            <ul>
-                <li><a href="">All</a></li>
-                <li><a href="">Movies</a></li>
-                <li><a href="">Series</a></li>
-                <li><a href="">TV Shows</a></li>
-            </ul>
+            <h3>Movies On Demand</h3>
             <form action="" onSubmit={handleMovieSearch}>
                 <i className="fas fa-search"></i>
                 <input type="text" placeholder="Search" onChange={e => setInputValue(e.target.value)} value={inputValue} />
             </form>
+            <i onClick={() => setHiddenMenu(!hiddenMenu)} id="burgerMenu" className="fas fa-bars"></i>
         </nav>
     )
 }
@@ -30,7 +25,11 @@ const styles = css`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fdfbff;
+    #burgerMenu{
+        color: #fe8da1;
+        cursor: pointer;
+        display: none;
+    }
     h3 {
         color: #fe8da1;
         letter-spacing: 2px;
@@ -69,7 +68,24 @@ const styles = css`
             border-radius: 0 10px 10px 0;
             border: none;
             outline: none;
+            width: 400px;
         }
+    }
+    @media(max-width: 800px){
+        h3{
+            display: none;
+        }
+        form{
+            input{
+                width: 360px;
+            }
+        }
+    }
+
+    @media(max-width: 1040px){
+        #burgerMenu{
+        display: block;
+    }
     }
 `;
 
