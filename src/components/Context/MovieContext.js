@@ -8,7 +8,7 @@ export const MovieState = ({ children }) => {
     const [popularMovies, setPopularMovies] = useState([]);
     const [trendingMovies, setTrendingMovies] = useState([]);
     const [inputValue, setInputValue] = useState("");
-    const API_KEY = '57f65183575e8374ca2935e492541b4e';
+    // const API_KEY = '57f65183575e8374ca2935e492541b4e';
     // const popularMoviesAPI = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
 
     // Display popular movies when user loads page
